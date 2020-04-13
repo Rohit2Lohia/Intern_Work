@@ -1,0 +1,42 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>-List of Movies-</h1>
+
+<div class="dropdown show">
+  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{% url 'home' %}"><button type="button" name="button", class="btn btn-primary">Sort By date</button></a>
+    <a class="dropdown-item" href="{% url 'articles:list_ascend' %}"><button type="button" name="button", class="btn btn-primary">Sort By name</button></a>
+  </div>
+</div>
+<form class="" action="{% url 'articles:search' %}" method="GET">
+   <div class="input-group mb-3">
+     <input placeholder="search movie.." value="{{ request.GET.q }}" name="q" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+     <div class="input-group-prepend">
+       <button type="submit" class="btn btn-primary">Search</button>
+     </div>
+   </div>
+</form>
+
+<div class="articles">
+   {% for article in articles %}
+      <div class="article">
+         <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+         <p>{{article.snippet}}</p>
+         <p>Date: {{article.date}}</p>
+         <p class="author">
+            <a href="{% url 'articles:detail' slug=article.slug %}"><button class="detail" type="detail" name="detail">Detail</button></a>
+            {% if article.author == request.user or request.user.is_superuser %}
+                  <a href="{% url 'articles:edit' slug=article.slug %}"><button class="btn btn-info btn-sm" type="Edit" name="Edit">Edit</button></a>
+                  <a href="{% url 'articles:delete' slug=article.slug %}"><button class="btn btn-danger btn-sm" type="Delete" name="Delete">Delete</button></a>
+            {% endif %}
+            Added by: {{article.author.username}}
+         </p>
+      </div>
+   {% endfor %}
+</div>
+
+{% endblock %}
