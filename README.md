@@ -9,11 +9,11 @@ Make sure the Django vesion is above 2.2.6
 2. Go to the directory 
       base_dir\Intern_Work-master\RockstarChef>
 3. Run the command
-      * base_dir\Intern_Work-master\RockstarChef>python manage.py makemigrations
+      * base_dir\Intern_Work-master\RockstarChef>python manage.py makemigrations <br>
       then
-      * base_dir\Intern_Work-master\RockstarChef>python manage.py migrate
+      * base_dir\Intern_Work-master\RockstarChef>python manage.py migrate <br>
       then 
-      * base_dir\Intern_Work-master\RockstarChef>python manage.py runserver
+      * base_dir\Intern_Work-master\RockstarChef>python manage.py runserver <br>
 4. Open http://127.0.0.1:8000/ in your browser.
 5. Open admin at http://127.0.0.1:8000/admin/ <br>
       * Details- username : admin <br>
