@@ -1,8 +1,9 @@
-### Intern_Work
-# Projects Assigned for intern
+# Intern_Work Project
 
-Installation Procedure: 
-
+### Project is live [here](https://rohit-lohia.herokuapp.com/).
+-  It is deployed using Heroku with deployment method Github
+<br><br>
+### To install locally: 
 Make sure the Django vesion is above 2.2.6
 
 1. Download this project, unzip the file and save it to some directory<base dir>.
@@ -24,4 +25,4 @@ Make sure the Django vesion is above 2.2.6
     * User 2- username : Billa123 <br>
               password : test1234567890
 
-# -Thank You-
+## -Thank You-
